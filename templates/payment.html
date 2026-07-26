@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Payment</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+
+<div class="content">
+
+
+<h1>🦊 PayPal Simulation</h1>
+
+
+<p>
+You are purchasing:
+</p>
+
+
+<h2>
+{{ product.name }}
+</h2>
+
+
+<p>
+Price: £{{ product.price }}
+</p>
+
+
+<a href="/create-payment/{{ order.id }}">
+
+<button>
+Pay with PayPal
+</button>
+
+</a>
+
+</div>
+
+
+</body>
+
+</html>

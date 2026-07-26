@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{{ product.name }}</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+
+<div class="content">
+
+
+<h1>
+{{ product.name }}
+</h1>
+
+
+<img 
+src="{{ url_for('static', filename='images/' + product.image) }}"
+width="300">
+
+
+<p>
+{{ product.description }}
+</p>
+
+
+<h2>
+Price: £{{ product.price }}
+</h2>
+
+
+<a href="/buy/{{ product.id }}">
+
+<button>
+Buy Now
+</button>
+
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>

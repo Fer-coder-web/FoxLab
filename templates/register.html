@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>This is the register page baka</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+</div>
+
+<div class="content">
+
+<h1>Create Account</h1>
+
+<form method="POST" action="/register">
+
+    <label>Username</label>
+    <br>
+
+    <input
+        type="text"
+        name="username"
+        placeholder="Enter username"
+        required>
+
+    <br><br>
+
+    <label>Password</label>
+    <br>
+
+    <input
+        type="password"
+        name="password"
+        placeholder="Enter password"
+        required>
+
+    <br><br>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

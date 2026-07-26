@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Premium Content</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="navbar">
+
+<a href="/">Home</a>
+<a href="/dashboard">Dashboard</a>
+<a href="/logout">Logout</a>
+
+</div>
+
+
+<div class="content">
+
+
+<h1>
+Premium Image
+</h1>
+
+
+{% if purchased %}
+
+<p>
+Thank you for your purchase!
+</p>
+
+<img 
+src="{{ url_for('static', filename='images/locked.png') }}"
+width="300">
+
+{% else %}
+
+<h2>
+🔒 Locked
+</h2>
+
+<p>
+You need to purchase this image first.
+</p>
+
+{% endif %}
+
+
+</div>
+
+</body>
+
+</html>
