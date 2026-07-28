@@ -16,6 +16,8 @@ import paypalrestsdk
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 paypalrestsdk.configure({
 
     "mode": "sandbox",
@@ -146,14 +148,14 @@ def login():
             session["username"] = user.username
 
             logging.info(
-        f"Successful login: {user.username}"
-    )
-
-            logging.warning(
-    f"Failed login attempt: {username}"
-)
+                f"Successful login: {user.username}"
+            )
 
             return redirect(url_for("dashboard"))
+
+        logging.warning(
+            f"Failed login attempt: {username}"
+        )
 
         return "Invalid username or password."
 
@@ -287,13 +289,13 @@ def create_payment(id):
 
         "redirect_urls": {
 
-            "return_url":
-            "http://127.0.0.1:5000/payment-success/" + str(order.id),
+    "return_url":
+    "http://18.220.7.74/payment-success/" + str(order.id),
 
-            "cancel_url":
-            "http://127.0.0.1:5000/payment-cancel"
+    "cancel_url":
+    "http://18.220.7.74/payment-cancel"
 
-        },
+},
 
         "transactions": [
 
